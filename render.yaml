@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: offsydeb-api
+    runtime: node
+    buildCommand: npm install -g bun && bun install && npx playwright install chromium --with-deps
+    startCommand: ./start.sh
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: /opt/render/.cache/ms-playwright

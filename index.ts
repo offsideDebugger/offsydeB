@@ -10,6 +10,13 @@ import crawlRoute from './routes/crawl.ts';
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+// Production environment check
+if (process.env.NODE_ENV === 'production') {
+  console.log('🚀 Running in production mode');
+  console.log('📍 Make sure Playwright browsers are installed');
+  console.log(`🌐 Port: ${PORT}`);
+}
+
 // Middleware
 app.use(cors());
 app.use(express.json());
