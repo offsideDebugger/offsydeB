@@ -32,14 +32,14 @@ railway up
 2. **Configure Build Settings**
    - **Name**: `offsydeb-api`
    - **Environment**: `Node`
-   - **Build Command**: `npm install -g bun && bun install && bunx playwright install chromium`
+   - **Build Command**: `npm install -g bun && bun install && npx playwright install chromium --with-deps`
    - **Start Command**: `bun start`
 
 3. **Environment Variables**
    ```
    NODE_ENV=production
-   PORT=10000
-   PLAYWRIGHT_BROWSERS_PATH=/opt/render/project/.cache/ms-playwright
+   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=false
+   PLAYWRIGHT_BROWSERS_PATH=/opt/render/project/src/.cache/ms-playwright
    ```
 
 4. **Advanced Settings**
@@ -55,7 +55,7 @@ railway up
    - **Start Command**: `bun start`
    - **Environment Variables**:
      - `NODE_ENV=production`
-     - `PLAYWRIGHT_BROWSERS_PATH=/opt/render/.cache/ms-playwright`
+     - `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=false`
 
 #### Option 2: Using render.yaml (Automatic)
 The repository includes a `render.yaml` file that automatically configures the deployment.

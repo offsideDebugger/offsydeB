@@ -5,11 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "bun run --watch index.ts",
-    "start": "./start.sh",
-    "start:direct": "bun run index.ts",
+    "start": "bun run index.ts",
     "build": "bun build index.ts --outdir ./dist",
-    "playwright:install": "npx playwright install chromium --with-deps",
-    "postinstall": "npx playwright install chromium --with-deps",
+    "playwright:install": "bunx playwright install",
     "docker:build": "docker build -t offsydeb .",
     "docker:run": "docker run -p 4000:4000 offsydeb",
     "pm2:start": "pm2 start ecosystem.config.js",
