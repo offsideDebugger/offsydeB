@@ -2,7 +2,7 @@ services:
   - type: web
     name: offsydeb-api
     runtime: node
-    buildCommand: npm install -g bun && bun install && npx playwright install chromium --with-deps
+    buildCommand: bun install && npx playwright install chromium --with-deps
     startCommand: bun start
     envVars:
       - key: NODE_ENV
